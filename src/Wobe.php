@@ -1,6 +1,6 @@
 <?php
 
-namespace WJ\Wobe;
+namespace WJ;
 
 class Wobe
 {

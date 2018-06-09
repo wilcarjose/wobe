@@ -1,6 +1,6 @@
 <?php
 
-namespace WJ\Wobe\Facades;
+namespace WJ\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

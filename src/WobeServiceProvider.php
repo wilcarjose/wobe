@@ -1,6 +1,6 @@
 <?php
 
-namespace WJ\Wobe;
+namespace WJ;
 
 use Illuminate\Support\ServiceProvider;
 

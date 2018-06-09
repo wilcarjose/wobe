@@ -57,7 +57,7 @@ class Wobe
 
 	public function city($cityCode)
     {
-        list($countryId, $stateId, $cityId) = explode('-', $cityCode);
+        list($countryId, $stateId, $cityId) = $this->getIdsFromCity($cityCode);
 
         $city = $this->world[$countryId]['states'][$stateId]['cities'][$cityId];
 
@@ -66,21 +66,25 @@ class Wobe
 
     public function stateOfCity($cityCode)
     {
-        list($countryId, $stateId, $cityId) = explode('-', $cityCode);
+        list($countryId, $stateId, $cityId) = $this->getIdsFromCity($cityCode);
 
-        return $this->world[$countryId]['states'][$stateId]['data'];
+        $state = $this->world[$countryId]['states'][$stateId]['data'];
+
+        return $this->stateToObject($state);
     }
 
     public function countryOfCity($cityCode)
     {
-        list($countryId, $stateId, $cityId) = explode('-', $cityCode);
+        list($countryId, $stateId, $cityId) = $this->getIdsFromCity($cityCode);
 
-        return $this->world[$countryId]['data'];
+        $country = $this->world[$countryId]['data'];
+
+        return $this->countryToObject($country);
     }
 
     public function state($stateCode)
     {
-        list($countryId, $stateId) = explode('-', $stateCode);
+        list($countryId, $stateId) = $this->getIdsFromState($stateCode);
 
         $state = $this->world[$countryId]['states'][$stateId]['data'];
 
@@ -89,14 +93,18 @@ class Wobe
 
     public function countryOfState($stateCode)
     {
-        list($countryId, $stateId) = explode('-', $stateCode);
+        list($countryId, $stateId) = $this->getIdsFromState($stateCode);
 
-        return $this->world[$countryId]['data'];
+        $country = $this->world[$countryId]['data'];
+
+        return $this->countryToObject($country);
     }
 
     public function country($countryCode)
     {
-        return $this->world[$countryCode]['data'];
+        $country = $this->world[$countryCode]['data'];
+
+        return $this->countryToObject($country);
     }
 
     public function statesOfCountry($countryCode)
@@ -106,7 +114,7 @@ class Wobe
 
     public function getCities($stateCode)
     {
-        list($countryId, $stateId) = explode('-', $stateCode);
+        list($countryId, $stateId) = $this->getIdsFromState($stateCode);
 
         $cities = $this->world[$countryId]['states'][$stateId]['cities'];
 
@@ -164,6 +172,15 @@ class Wobe
         $state['name'] = $array[1];
 
         return $this->toObject($state);
+    }
+
+    protected function countryToObject($array)
+    {
+    	$country['id'] = $array[0];
+    	$country['name'] = $array[1];
+    	$country['area_code'] = $array[2];
+
+    	return $this->toObject($country);
     }
 
     protected function toObject($array)

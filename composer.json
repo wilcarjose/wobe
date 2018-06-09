@@ -20,21 +20,21 @@
     },
     "autoload": {
         "psr-4": {
-            "Wilcarjose\\Wobe\\": "src/"
+            "WJ\\Wobe\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Wilcarjose\\Wobe\\Tests\\": "tests"
+            "WJ\\Wobe\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Wilcarjose\\Wobe\\WobeServiceProvider"
+                "WJ\\Wobe\\WobeServiceProvider"
             ],
             "aliases": {
-                "Wobe": "Wilcarjose\\Wobe\\Facades\\Wobe"
+                "Wobe": "WJ\\Wobe\\Facades\\Wobe"
             }
         }
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Wilcarjose\Wobe;
+namespace WJ\Wobe;
 
 use Illuminate\Support\ServiceProvider;
 

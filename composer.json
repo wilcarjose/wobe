@@ -1,0 +1,41 @@
+{
+    "name": "wilcarjose/wobe",
+    "description": ":World information lib",
+    "license": "license",
+    "authors": [
+        {
+            "name": "Wilcar José Angulo",
+            "email": "wilcarjose@gmail.com",
+            "homepage": "wilcarjose.com"
+        }
+    ],
+    "homepage": "https://github.com/wilcarjose/wobe",
+    "keywords": ["Laravel", "Wobe", "Globe", "World", "Countries", "Cities", "States", "Provinces"],
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "orchestra/testbench": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wilcarjose\\Wobe\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Wilcarjose\\Wobe\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wilcarjose\\Wobe\\WobeServiceProvider"
+            ],
+            "aliases": {
+                "Wobe": "Wilcarjose\\Wobe\\Facades\\Wobe"
+            }
+        }
+    }
+}

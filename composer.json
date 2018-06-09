@@ -1,12 +1,12 @@
 {
     "name": "wilcarjose/wobe",
     "description": ":World information lib",
-    "license": "license",
+    "license": "MIT",
     "authors": [
         {
             "name": "Wilcar José Angulo",
             "email": "wilcarjose@gmail.com",
-            "homepage": "wilcarjose.com"
+            "homepage": "http://wilcarjose.com"
         }
     ],
     "homepage": "https://github.com/wilcarjose/wobe",

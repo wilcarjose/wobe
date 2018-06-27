@@ -53,6 +53,8 @@ class WobeServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerHelpers();
+
         $this->mergeConfigFrom(__DIR__.'/../config/wobe.php', 'wobe');
 
         // Register the service the package provides.
@@ -69,5 +71,16 @@ class WobeServiceProvider extends ServiceProvider
     public function provides()
     {
         return ['wobe'];
+    }
+
+    /**
+     * Register helpers file
+     */
+    public function registerHelpers()
+    {
+        if (file_exists($file =  __DIR__.'/Support/helpers.php'))
+        {
+            require $file;
+        }
     }
 }

@@ -28,9 +28,9 @@ class Wobe
 	{
 		$country = $country ?: 'VE';
 
-		$countryId = $this->countries[$country][0];
+		//$countryId = $this->countries[$country][0];
 
-		$states = $this->world[$countryId]['states'];
+		$states = $this->world[$country]['states'];
 
 		if ($showCities) {
 			return $states;
@@ -129,9 +129,9 @@ class Wobe
     {
     	$country = $country ?: 'VE';
 
-    	$countryId = config('wobe.countries')[$country][0];
+    	//$countryId = config('wobe.countries')[$country][0];
 
-		$states = config('wobe.all')[$countryId]['states'];
+		$states = config('wobe.all')[$country]['states'];
 
     	$cities = [];
 
